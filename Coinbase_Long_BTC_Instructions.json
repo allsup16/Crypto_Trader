@@ -1,0 +1,113 @@
+{
+    "General_Instructions": {
+        "Platform": "Coinbase",
+        "Name": "Long-Seed",
+        "Product_ID": "BTC-USDC",
+        "Currency_One": "BTC Wallet",
+        "Currency_Two": "USDC Wallet",
+        "Json_File_Name": "Coinbase_Long_BTC_Instructions",
+        "Manual_Stop": true,
+        "Timer": 10,
+        "Counter": 31,
+        "Counter_Max": 336,
+        "Seed": {
+            "Active_Buy": false,
+            "Trigger": 48,
+            "Seed_Size": 1,
+            "Active_Sell": false,
+            "Sell_Threshold_Percentage": 10,
+            "Percent_To_Be_Sold": 93,
+            "Minimum_Currency_Two": 50,
+            "Granularity": "ONE_HOUR",
+            "Days_Back": 1,
+            "PercentSell_Threshold_Percentage_Low": 2
+        },
+        "Dynamic_Adjustment": {
+            "Active": true,
+            "State": "ML",
+            "Percent_High": 0.3,
+            "Percent_Medium_High": 2.1,
+            "Percent_Medium_Low": 2.1,
+            "Percent_Low": 0.3,
+            "States": {
+                "H": {
+                    "Trigger": 168,
+                    "Seed_Size": 1,
+                    "Sell_Threshold_Percentage": 10,
+                    "Percent_To_Be_Sold": 93,
+                    "Minimum_Currency_Two": 100
+                },
+                "MH": {
+                    "Trigger": 168,
+                    "Seed_Size": 1,
+                    "Sell_Threshold_Percentage": 10,
+                    "Percent_To_Be_Sold": 93,
+                    "Minimum_Currency_Two": 100
+                },
+                "D": {
+                    "Trigger": 168,
+                    "Seed_Size": 1,
+                    "Sell_Threshold_Percentage": 10,
+                    "Percent_To_Be_Sold": 93,
+                    "Minimum_Currency_Two": 100
+                },
+                "ML": {
+                    "Trigger": 48,
+                    "Seed_Size": 1,
+                    "Sell_Threshold_Percentage": 10,
+                    "Percent_To_Be_Sold": 93,
+                    "Minimum_Currency_Two": 50
+                },
+                "L": {
+                    "Trigger": 48,
+                    "Seed_Size": 1,
+                    "Sell_Threshold_Percentage": 10,
+                    "Percent_To_Be_Sold": 93,
+                    "Minimum_Currency_Two": 50
+                }
+            }
+        },
+        "Scaling": {
+            "Active": true,
+            "Cap_Amount": 57600,
+            "Type": "Linear",
+            "Field_Groupings": "All_States",
+            "Min_Seed_Size": 1,
+            "Min_Currency_Two": 1270,
+            "Scale_By": 1270,
+            "Seed_Size_Change": 1,
+            "Current_Seed_Size": 1,
+            "Current_Base_Currency_Two": 1270,
+            "Prev_Seed_Size": 1,
+            "Prev_Base_Currency_Two": 1270,
+            "Next_Seed_Size": 2,
+            "Next_Base_Currency_Two": 2540
+        },
+        "Field_Groupings": {
+            "All_States": [
+                "H",
+                "MH",
+                "D",
+                "ML",
+                "L"
+            ],
+            "General_High": [
+                "H",
+                "MH",
+                "D"
+            ],
+            "General_Low": [
+                "L",
+                "ML",
+                "D"
+            ],
+            "Dynamic_Adjustment": [
+                "Trigger",
+                "Seed_Size",
+                "Sell_Threshold_Percentage",
+                "Percent_To_Be_Sold",
+                "Minimum_Currency_Two"
+            ]
+        }
+    }
+}
