@@ -6,6 +6,16 @@ import numpy as np
 import uuid
 import math
 
+granularity_map = {
+    "ONE_MINUTE": 60,
+    "FIVE_MINUTE": 300,
+    "FIFTEEN_MINUTE": 900,
+    "ONE_HOUR": 3600,
+    "SIX_HOUR": 21600,
+    "ONE_DAY": 86400,
+}
+
+
 LOG_PATH = Path("log.json")
 ########### Interact with coinbase ##################### 
 def MyAccountCurrencyOne(accounts,CurrencyOne):
@@ -65,7 +75,7 @@ def SellCurrencyOneLimit(client,orderInfo,SeedSellThresh,PercentToSell):
         print("Sell failed:", e)
         return None
 def month_spread(client,Currency,granularity,days_back):
-        seconds=86400#seconds in a day
+        seconds=granularity_map[granularity]#seconds in a day
         now = client.get_unix_time()
         end_ts = int(now["epoch_seconds"])
         start_ts = end_ts - (days_back * seconds)  # 30 days ago
