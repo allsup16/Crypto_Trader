@@ -6,6 +6,8 @@ import os
 import helper
 import time
 
+#os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 load_dotenv()
 
 api_key = os.getenv('Coinbase_API_Key_Name')
@@ -62,10 +64,8 @@ def main(file):
 
             if  instructions['General_Instructions']['Counter']+1<=CounterMax:
                 instructions['General_Instructions']['Counter']+=1
-                print('reaches')
             else:
                 instructions['General_Instructions']['Counter']=1
-            print(instructions)
             helper.WriteInstructions(file,instructions)
         time.sleep(instructions['General_Instructions']['Timer'])
     except Exception as e:
