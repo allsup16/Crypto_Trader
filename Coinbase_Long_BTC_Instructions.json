@@ -7,27 +7,27 @@
         "Currency_Two": "USDC Wallet",
         "Json_File_Name": "Coinbase_Long_BTC_Instructions",
         "Manual_Stop": true,
-        "Timer": 10,
-        "Counter": 40,
+        "Timer": 5,
+        "Counter": 49,
         "Counter_Max": 336,
         "Seed": {
             "Active_Buy": false,
-            "Trigger": 48,
+            "Trigger": 24,
             "Seed_Size": 1,
             "Active_Sell": false,
             "Sell_Threshold_Percentage": 10,
             "Percent_To_Be_Sold": 93,
-            "Minimum_Currency_Two": 50,
+            "Minimum_Currency_Two": 0,
             "Granularity": "ONE_DAY",
             "Days_Back": 30,
             "PercentSell_Threshold_Percentage_Low": 2
         },
         "Dynamic_Adjustment": {
             "Active": true,
-            "State": "ML",
+            "State": "D",
             "Percent_High": 0.3,
-            "Percent_Medium_High": 5.0,
-            "Percent_Medium_Low": 5.0,
+            "Percent_Medium_High": 10.0,
+            "Percent_Medium_Low": 10.0,
             "Percent_Low": 0.3,
             "States": {
                 "H": {
@@ -45,25 +45,25 @@
                     "Minimum_Currency_Two": 100
                 },
                 "D": {
-                    "Trigger": 168,
+                    "Trigger": 24,
                     "Seed_Size": 1,
                     "Sell_Threshold_Percentage": 10,
                     "Percent_To_Be_Sold": 93,
-                    "Minimum_Currency_Two": 100
+                    "Minimum_Currency_Two": 0
                 },
                 "ML": {
                     "Trigger": 24,
                     "Seed_Size": 1,
                     "Sell_Threshold_Percentage": 10,
                     "Percent_To_Be_Sold": 93,
-                    "Minimum_Currency_Two": 50
+                    "Minimum_Currency_Two": 0
                 },
                 "L": {
                     "Trigger": 24,
                     "Seed_Size": 1,
                     "Sell_Threshold_Percentage": 10,
                     "Percent_To_Be_Sold": 93,
-                    "Minimum_Currency_Two": 50
+                    "Minimum_Currency_Two": 0
                 }
             }
         },

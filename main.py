@@ -13,7 +13,7 @@ api_secret = os.getenv('Coinbase_Private_Key')
 #with open("/root/auto_staker/logs/cron.log", "a") as log:                                                                   
 #    log.write(f"\n[{datetime.now(timezone.utc)}] main.py started\n")
 
-Files=["Coinbase_Long_BTC_Instructions","Coinbase_Short_BTC_Instructions"]
+Files=["Coinbase_Long_BTC_Instructions"]#"Coinbase_Short_BTC_Instructions"]
 
 def main(file):
     try:
@@ -47,6 +47,7 @@ def main(file):
         
         value =helper.MyValueCurrencyTwo(accounts,CurrencyTwo)
         if Active:
+            print(value >= Min)
             if value >= Min:
                 if Count%Counter==0:
                     if ActiveBuy:
@@ -59,11 +60,13 @@ def main(file):
                             sellReply=helper.SellCurrencyOneLimit(client,orderInfo,SeedSellThresh,PecentToBeSold)
                             print(sellReply)
 
-                if  instructions['General_Instructions']['Counter']+1<=CounterMax:
-                    instructions['General_Instructions']['Counter']+=1
-                else:
-                    instructions['General_Instructions']['Counter']=1
-                helper.WriteInstructions(file,instructions)
+            if  instructions['General_Instructions']['Counter']+1<=CounterMax:
+                instructions['General_Instructions']['Counter']+=1
+                print('reaches')
+            else:
+                instructions['General_Instructions']['Counter']=1
+            print(instructions)
+            helper.WriteInstructions(file,instructions)
         time.sleep(instructions['General_Instructions']['Timer'])
     except Exception as e:
             print("".join(traceback.format_exception(type(e), e, e.__traceback__)))

@@ -12,7 +12,7 @@
         "Counter_Max": 336,
         "Seed": {
             "Active_Buy": false,
-            "Trigger": 12,
+            "Trigger": 24,
             "Seed_Size": 2,
             "Active_Sell": false,
             "Sell_Threshold_Percentage": 2.0,
@@ -24,7 +24,7 @@
         },
         "Dynamic_Adjustment": {
             "Active": true,
-            "State": "MH",
+            "State": "H",
             "Percent_High": 0.3,
             "Percent_Medium_High": 2.1,
             "Percent_Medium_Low": 2.1,
