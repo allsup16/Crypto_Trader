@@ -8,7 +8,7 @@
         "Json_File_Name": "Coinbase_Short_BTC_Instructions",
         "Manual_Stop": true,
         "Timer": 10,
-        "Counter": 83,
+        "Counter": 40,
         "Counter_Max": 336,
         "Seed": {
             "Active_Buy": false,

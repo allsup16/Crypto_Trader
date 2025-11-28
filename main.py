@@ -13,7 +13,7 @@ api_secret = os.getenv('Coinbase_Private_Key')
 #with open("/root/auto_staker/logs/cron.log", "a") as log:                                                                   
 #    log.write(f"\n[{datetime.now(timezone.utc)}] main.py started\n")
 
-Files=["Coinbase_Long_BTC_Instructions"]#"Coinbase_Short_BTC_Instructions"]
+Files=["Coinbase_Long_BTC_Instructions","Coinbase_Short_BTC_Instructions"]
 
 def main(file):
     try:
